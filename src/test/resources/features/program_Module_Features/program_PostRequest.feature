@@ -1,24 +1,12 @@
-
-@tag
-Feature: Validate Delete Request
-
-  @tag1
-  Scenario: To Delete by Program Id
-    Given I want to write a step with precondition
-    And some other precondition
-    When I complete action
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
-
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+Feature: I am testing post request for LMS
+Scenario: Post request to create a record in the LMS DB
+    Given LMS website is up and running
+    And Set header and body to create new user
+   When  Hit the api with post request and end point as "/allprograms"
+    Then API returned the error code as 201 and API created a new USER in the system
+Scenario: Post request to validate error message when no body is sent
+    Given LMS website is up and running
+    And  set header and but without any body
+    When Hit the api with post request and end point as "/allprograms"
+    Then API returned the status code as 415
+#  And  message displayed as "Unsupported Media Type
