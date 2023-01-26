@@ -10,6 +10,9 @@
         <selenium-version>3.141.59</selenium-version>
         <allure-testng-version>2.13.9</allure-testng-version>
         <extentreports-version>4.0.9</extentreports-version>
+	<maven-surefire-plugin-version>3.0.0-M8</maven-surefire-plugin-version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
  </properties>
   
   <dependencies>
@@ -20,6 +23,13 @@
     <artifactId>junit</artifactId>
     <version>4.13.2</version>
     <scope>test</scope>
+</dependency>
+	  
+<dependency>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-surefire-plugin</artifactId>
+  <version>3.0.0-M8</version>
+  <type>maven-plugin</type>
 </dependency>
 
 
@@ -59,13 +69,13 @@
     <version>5.1.1</version>
     <scope>test</scope>
 </dependency>
-<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<!-- https://mvnrepository.com/artifact/org.testng/testng 
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.6.0</version>
     <scope>test</scope>
-</dependency>
+</dependency>  -->
 
 <!-- https://mvnrepository.com/artifact/org.hamcrest/java-hamcrest -->
 <dependency>
@@ -146,12 +156,12 @@
     <version>3.1.1</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports 
 <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
     <version>5.0.9</version>
-</dependency>
+</dependency> -->
 
 <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
 <dependency>
