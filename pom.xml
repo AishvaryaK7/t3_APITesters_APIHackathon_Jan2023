@@ -10,6 +10,9 @@
         <selenium-version>3.141.59</selenium-version>
         <allure-testng-version>2.13.9</allure-testng-version>
         <extentreports-version>4.0.9</extentreports-version>
+	<maven-surefire-plugin-version>3.0.0-M5</maven-surefire-plugin-version>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
  </properties>
   
   <dependencies>
