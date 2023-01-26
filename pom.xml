@@ -4,19 +4,20 @@
   <artifactId>t3_APITesters_APIHackathon_Jan2023</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <!--
   <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <aspectj.version>1.9.6</aspectj.version>
         <selenium-version>3.141.59</selenium-version>
         <allure-testng-version>2.13.9</allure-testng-version>
         <extentreports-version>4.0.9</extentreports-version>
-	<maven-surefire-plugin-version>3.0.0-M8</maven-surefire-plugin-version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+         <maven-surefire-plugin-version>3.0.0-M8</maven-surefire-plugin-version>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
  </properties>
-  
+  -->
   <dependencies>
-  
+ 
 <!-- https://mvnrepository.com/artifact/junit/junit -->
 <dependency>
     <groupId>junit</groupId>
@@ -24,19 +25,20 @@
     <version>4.13.2</version>
     <scope>test</scope>
 </dependency>
-	  
+<!--
 <dependency>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-surefire-plugin</artifactId>
   <version>3.0.0-M8</version>
   <type>maven-plugin</type>
 </dependency>
-	  
+
 <dependency>
   <groupId>org.slf4j</groupId>
   <artifactId>slf4j-simple</artifactId>
   <version>1.7.21</version>
 </dependency>
+-->
 
 
    <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
@@ -81,7 +83,7 @@
     <artifactId>testng</artifactId>
     <version>7.6.0</version>
     <scope>test</scope>
-</dependency>  -->
+</dependency> -->
 
 <!-- https://mvnrepository.com/artifact/org.hamcrest/java-hamcrest -->
 <dependency>
@@ -105,12 +107,13 @@
     <scope>test</scope>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
-    	<groupId>org.seleniumhq.selenium</groupId>
-    	<artifactId>selenium-java</artifactId>
-    	<version>4.4.0</version>
-	</dependency>
-	
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.8.0</version>
+</dependency>
+
 	<dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
@@ -167,7 +170,8 @@
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
     <version>5.0.9</version>
-</dependency> -->
+</dependency>
+-->
 
 <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
 <dependency>
@@ -185,4 +189,39 @@
 
 </dependencies>
 
+   <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+<build>
+
+        <pluginManagement>
+
+            <plugins>
+
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M6</version>
+                    <configuration>
+
+                        <includes>
+                            <include>**/testRunner.java</include>
+                        </includes>
+                        <parallel>methods</parallel>
+                        <threadCount>4</threadCount>
+                        <testFailureIgnore>true</testFailureIgnore>
+                       <!-- <systemPropertyVariables>
+                            <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                        </systemPropertyVariables> -->
+                    </configuration>
+                </plugin>
+
+            </plugins>
+
+        </pluginManagement>
+
+    </build>
 </project>
